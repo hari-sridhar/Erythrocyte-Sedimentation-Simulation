@@ -35,7 +35,7 @@ Each particle experiences a combination of:
 
 The system is assumed to be in **steady state**, i.e., the net force on each particle is zero:  
 \[
-\sum F = 0 \Rightarrow \text{terminal velocity is quickly achieved}
+ΣF = 0 {terminal velocity is quickly achieved}
 \]
 
 ---
