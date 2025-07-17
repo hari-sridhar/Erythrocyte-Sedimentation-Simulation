@@ -1,7 +1,7 @@
 
 # Modeling and Simulation of the Dynamics of Erythrocyte Sedimentation and Plasma Counter-Flow
 
-**Author:** Harish Sridhar (AM23M024)  
+**Author:** Harish Sridhar
 **Institute:** Department of Applied Mechanics, IIT Madras
 
 ---
