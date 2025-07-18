@@ -111,9 +111,8 @@ for t = 2:num_time_steps
 
 
 %% Mirror nodes across walls
-%[node_labels, num_nodes, mirrored_particles] = mirrorParticleNodes(num_original_nodes, N, x_min, x_max, nodes);
 
-[nodes_ext, labels_ext, num_nodes_ext, mirrored_particles] = mirrorParticleNodes3(num_original_nodes, x_min, x_max, nodes);
+[nodes_ext, labels_ext, num_nodes_ext, mirrored_particles] = mirrorParticleNodes(num_original_nodes, x_min, x_max, nodes);
 
 edges = generateParticleEdges(N);
 
@@ -122,6 +121,7 @@ edges = generateParticleEdges(N);
 [highest_4th_node, sink_nodes, source_nodes, num_edges] = generateSource(highest_particle, N, edges);
 
 %% Prepare edge list such that i is lower y than j
+
 edges_ascending = getEdgesAscending(edges,nodes);
 
 %% Update particle interactions
@@ -166,13 +166,7 @@ edges_ascending = getEdgesAscending(edges,nodes);
 
 %% Triangulation
 
-%[Res, triangle_info] = computeResistanceMatrix(nodes, node_labels, num_original_nodes, edges, particle_voronoi_neighbors, R, eta, y_max);
-
-%[triangle_info, Res] = compute_resist_triangle(nodes, node_labels, N, eta, y_max);
-
 [triangle_info, Res] = compute_wall_edge_resistance(nodes_ext, labels_ext, nodes, node_labels, N, eta, y_max);
-
-% 
 
 
 %% Voltage calculation
@@ -252,8 +246,6 @@ fprintf("---- Res Element-wise View ----\n");
 
 %% Animation (Particles Moving Freely)
 
-%animateParticles(X_history, Y_history, R, colors, x_min, x_max)
-
 animateParticleStreamline(X_history, Y_history, R, colors, ...
                                     x_min, x_max, nodes_all, edge_currents_all, alpha)
 
@@ -261,4 +253,4 @@ animateParticleStreamline(X_history, Y_history, R, colors, ...
 
 plotParticleDynamics(X_history, Y_history, Vx_history, Vy_history, time_steps, colors, N, alpha)      
 
-save('phase3_data.mat', 'X_history', 'Y_history');
+save('data.mat', 'X_history', 'Y_history');
