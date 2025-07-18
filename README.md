@@ -86,7 +86,7 @@ To simulate a continuous unbounded domain:
      - Update positions.
 
 3. **Post-Processing**
-   - Save data to `.mat` file.
+   - Save data to `data.mat` file.
    - Plot velocity vs. time and position vs. time.
    - Animate streamline current flows over time.
 
@@ -99,7 +99,7 @@ To simulate a continuous unbounded domain:
 | `og_main.m` | Primary driver script |
 | `generateParticleNodes.m` | Generate particle nodes |
 | `generateParticleEdges.m` | Create 4-node internal connections |
-| `mirrorParticleNodes3.m` | Mirror nodes across vertical boundaries |
+| `mirrorParticleNodes.m` | Mirror nodes across vertical boundaries |
 | `compute_wall_edge_resistance.m` | Compute triangle-based resistance matrix |
 | `generateSource.m` | Assign source and sink nodes per particle |
 | `getEdgesAscending.m` | Sort edges by Y-coordinate |
@@ -137,7 +137,7 @@ By combining agent-based modeling and electrical analogies, this simulation prov
 
 ```bash
 1. Open MATLAB.
-2. Run og_main.m
+2. Run Main.m
 3. When prompted, enter the number of particles (example: 3 or 5).
 4. View outputs: animation, velocity plots, trajectory graphs.
 ```
