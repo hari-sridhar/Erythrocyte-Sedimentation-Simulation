@@ -1,4 +1,4 @@
-function [nodes_ext, labels_ext, num_nodes_ext, mirrored_particles] = mirrorParticleNodes3(num_original_nodes, x_min, x_max, nodes)
+function [nodes_ext, labels_ext, num_nodes_ext, mirrored_particles] = mirrorParticleNodes(num_original_nodes, x_min, x_max, nodes)
 
 
 % Original labels
